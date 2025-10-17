@@ -4,6 +4,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 body {
   font-family: "Poppins", sans-serif;
@@ -222,6 +226,7 @@ nav a:hover {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
 }
+
 
 .departments-grid div {
   background: #e6f9f6;
@@ -442,5 +447,68 @@ footer {
 @media (max-width: 600px) {
   .contact-form {
     width: 90%;
+  }
+}
+/* ======== CEO SECTION ======== */
+.ceo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 80px 10%;
+  background: #ffffff;
+}
+
+.ceo-section .ceo-image img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.ceo-section .ceo-text {
+  max-width: 500px;
+}
+
+.ceo-section .ceo-text h3 {
+  font-size: 2rem;
+  color: #1ebba3;
+  margin-bottom: 15px;
+  font-weight: 700;
+  position: relative;
+}
+
+.ceo-section .ceo-text h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #1ebba3;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+.ceo-section .ceo-text p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .ceo-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 5%;
+  }
+
+  .ceo-section .ceo-image img {
+    width: 280px;
+    height: 280px;
+  }
+
+  .ceo-section .ceo-text h3::after {
+    margin: 8px auto 0;
   }
 }

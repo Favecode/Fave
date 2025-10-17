@@ -1,4 +1,3 @@
-// src/App.jsx
 import React from "react";
 import "./App.css";
 
@@ -10,7 +9,6 @@ import doctor3 from "./B.jpg";
 import CEO from "./cad.jpg";
 
 function App() {
-  // Scroll to contact section when clicking "Book Appointment"
   const scrollToContact = () => {
     const contactSection = document.getElementById("contact");
     if (contactSection) {
@@ -20,15 +18,16 @@ function App() {
 
   return (
     <>
+    
       {/* ===== NAVBAR ===== */}
       <nav className="navbar">
         <div className="logo">Hope-Care</div>
         <ul className="nav-links">
           <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#departments">Departments</a></li>
           <li><a href="#experts">Experts</a></li>
+          <li><a href="#departments">Departments</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -50,66 +49,33 @@ function App() {
         <img src={heroImg} alt="Healthcare" className="hero-img" />
       </section>
 
-     {/* ===== ABOUT SECTION ===== */}
-<section className="about" id="about">
-  <h2>About Us</h2>
-  <p>
-    Hope-Care is a modern healthcare platform offering exceptional
-    medical services, personalized attention, and cutting-edge technology.
-  </p>
+      {/* ===== CEO SECTION ===== */}
+      <section className="ceo-section">
+        <div className="ceo-image">
+          <img src={CEO} alt="CEO" />
+        </div>
+        <div className="ceo-text">
+          <h3>Dr. Akinyemi</h3>
+          <p>
+            CEO & Founder of Hope-Care, devoted to advancing healthcare through compassion, integrity, and excellence.
+He leads a dedicated team committed to providing trusted, patient-centered care and promoting the highest standards of medical practice.
+          </p>
+        </div>
+      </section>
 
-  {/* About Numbers */}
-  <div className="about-numbers">
-    <div>
-      <h3>250+</h3>
-      <p>Qualified Doctors</p>
-    </div>
-    <div>
-      <h3>120+</h3>
-      <p>Modern Clinics</p>
-    </div>
-    <div>
-      <h3>98%</h3>
-      <p>Recovery Rate</p>
-    </div>
-  </div>
-
-  {/* CEO Section */}
-{/* CEO Section */}
-<div className="ceo-section" style={{ display: "flex", alignItems: "center", marginTop: "40px", gap: "20px" }}>
-  <div className="ceo-image">
-    <img 
-      src={CEO} 
-      alt="CEO"
-      style={{ width: "350px", borderRadius: "10px", objectFit: "cover" }}
-    />
-  </div>
-  <div className="ceo-text">
-    <h3>Dr. Akinyemi </h3>
-    <p>
-      CEO & Founder of Hope-Care, dedicated to bringing world-class
-      healthcare services with compassion, innovation, and excellence.
-    </p>
-  </div>
-</div>
-
-</section>
-
-
-      {/* ===== SERVICES ===== */}
-      <section className="services" id="services">
-        <h2>Our Services</h2>
-        <div className="service-grid">
-          {[
-            { img: "https://cdn-icons-png.flaticon.com/512/2966/2966327.png", title: "Cardiology", desc: "Comprehensive heart care provided by top specialists." },
-            { img: "https://cdn-icons-png.flaticon.com/512/2966/2966331.png", title: "Dentistry", desc: "Professional dental services for your confident smile." },
-            { img: "https://cdn-icons-png.flaticon.com/512/2966/2966340.png", title: "Pediatrics", desc: "Specialized child care for healthy growth and happiness." },
-            { img: "https://cdn-icons-png.flaticon.com/512/2966/2966317.png", title: "Laboratory", desc: "Accurate diagnostic testing with modern technology." },
-          ].map((service, index) => (
-            <div key={index} className="service-card">
-              <img src={service.img} alt={service.title} />
-              <h3>{service.title}</h3>
-              <p>{service.desc}</p>
+      {/* ===== EXPERTS ===== */}
+      <section className="experts" id="experts">
+        <h2>Our Experts</h2>
+        <div className="experts-grid">
+          {[ 
+            { img: doctor1, name: "Dr. Favor", specialty: "Cardiologist" },
+            { img: doctor2, name: "Dr. Heritage", specialty: "Pediatrician" },
+            { img: doctor3, name: "Dr. Emmanuel", specialty: "Neurologist" },
+          ].map((doc, index) => (
+            <div key={index} className="expert-card">
+              <img src={doc.img} alt={doc.name} />
+              <h3>{doc.name}</h3>
+              <p>{doc.specialty}</p>
             </div>
           ))}
         </div>
@@ -132,35 +98,44 @@ function App() {
         </div>
       </section>
 
-      {/* ===== EXPERTS ===== */}
-      <section className="experts" id="experts">
-        <h2>Our Experts</h2>
-        <div className="experts-grid">
+      {/* ===== SERVICES ===== */}
+      <section className="services" id="services">
+        <h2>Our Services</h2>
+        <div className="service-grid">
           {[
-            { img: doctor1, name: "Dr. Favor", specialty: "Cardiologist" },
-            { img: doctor2, name: "Dr. Heritage", specialty: "Pediatrician" },
-            { img: doctor3, name: "Dr. Emmanuel", specialty: "Neurologist" },
-          ].map((doc, index) => (
-            <div key={index} className="expert-card">
-              <img src={doc.img} alt={doc.name} />
-              <h3>{doc.name}</h3>
-              <p>{doc.specialty}</p>
+            { img: "https://cdn-icons-png.flaticon.com/512/2966/2966327.png", title: "Cardiology", desc: "Comprehensive heart care provided by top specialists." },
+            { img: "https://cdn-icons-png.flaticon.com/512/2966/2966331.png", title: "Dentistry", desc: "Professional dental services for your confident smile." },
+            { img: "https://cdn-icons-png.flaticon.com/512/2966/2966340.png", title: "Pediatrics", desc: "Specialized child care for healthy growth and happiness." },
+            { img: "https://cdn-icons-png.flaticon.com/512/2966/2966317.png", title: "Laboratory", desc: "Accurate diagnostic testing with modern technology." },
+          ].map((service, index) => (
+            <div key={index} className="service-card">
+              <img src={service.img} alt={service.title} />
+              <h3>{service.title}</h3>
+              <p>{service.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ===== FEEDBACK ===== */}
-      <section className="feedback" id="feedback">
-        <h2>What Our Patients Say</h2>
-        <div className="feedback-grid">
+      {/* ===== ABOUT ===== */}
+      <section className="about" id="about">
+        <h2>About Us</h2>
+        <p>
+          Hope-Care is a modern healthcare platform offering exceptional
+          medical services, personalized attention, and cutting-edge technology.
+        </p>
+        <div className="about-numbers">
           <div>
-            <p>“The doctors here really care. My recovery was faster than expected!”</p>
-            <h4>- Alade M.</h4>
+            <h3>250+</h3>
+            <p>Qualified Doctors</p>
           </div>
           <div>
-            <p>“Modern equipment, friendly nurses, and top-notch professionalism.”</p>
-            <h4>- Adunni F.</h4>
+            <h3>120+</h3>
+            <p>Modern Clinics</p>
+          </div>
+          <div>
+            <h3>98%</h3>
+            <p>Recovery Rate</p>
           </div>
         </div>
       </section>
@@ -181,9 +156,10 @@ function App() {
       <footer>
         <div className="footer-links">
           <a href="#hero">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
+          <a href="#experts">Experts</a>
           <a href="#departments">Departments</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </div>
         <p>© 2025 Hope-Care. All Rights Reserved.</p>
